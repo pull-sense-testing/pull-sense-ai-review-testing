@@ -6,6 +6,9 @@ interface User {
   email?: string;
 }
 
+
+
+
 function getUserName(user: User: string {
   return user.fullName; 
 }
