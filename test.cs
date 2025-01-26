@@ -9,7 +9,14 @@ struct Task: Codable {
 class TaskManager {
     private var tasks: [Task] = []
     
-    func addTask(title: String, description: String) -> Task {
+func addTask(title: String, description: String) -> Task {
+  guard !title.isEmpty, !description.isEmpty else {
+    throw SomeError.invalidInput
+  }
+  let newTask = Task(id: tasks.count + 1, title: title, description: description)
+  tasks.append(newTask)
+  return newTask
+}
         let newTask = Task(id: tasks.count + 1, title: title, description: description)
         tasks.append(newTask)
         return newTask
