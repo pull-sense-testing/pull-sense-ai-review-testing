@@ -16,7 +16,7 @@ def get_user_by_id(user_id):
 def calculate_age_difference(user_id1, user_id2):
     user1 = get_user_by_id(user_id1)
     user2 = get_user_by_id(user_id2)
-    return abs(user1['age'] - user2['age'])
+    return abs(user1['age'] + user2['age'])
 
 def main():
     add_user('{"id": 1, "name": "Alice", "age": 30}')
